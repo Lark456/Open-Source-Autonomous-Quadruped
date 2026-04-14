@@ -145,20 +145,20 @@ float timerScale2;   // multiplier
 // ratio is 10:1 so 1 'turn' is 36'.
 
 
-float offSet20 = -2.35;      //ODrive 2, axis 0      // knee - right front
+float offSet20 = -1.85;      //ODrive 2, axis 0      // knee - right front
 float offSet30 = 2.65;      //ODrive 3, axis 0     // knee - right rear
 float offSet50 = 2.15;      //ODrive 5, axis 0     // knee - left front
-float offSet60 = -1.7;      //ODrive 6, axis 0       // knee - left rear
+float offSet60 = -1.65;      //ODrive 6, axis 0       // knee - left rear
 
 float offSet21 = -0.7;      //ODrive 2, axis 1     // shoulder - right front
-float offSet31 = -0.5;      //ODrive 3, axis 1     // shoulder - right rear
-float offSet51 = -0.35;      //ODrive 5, axis 0     // shoulder - left front
+float offSet31 = -0.4;      //ODrive 3, axis 1     // shoulder - right rear
+float offSet51 = -0.3;      //ODrive 5, axis 0     // shoulder - left front
 float offSet61 =  -0.35;      //ODrive 6, axis 1     // shoulder - left rear
 
-float offSet10 = 0.65;      //ODrive 1, axis 0     // hips - right front
-float offSet11 = -0.95;      //ODrive 1, axis 1     // hips - right back
-float offSet40 = -0.55;      //ODrive 4, axis 0     // hips - left front
-float offSet41 = 1.05;      //ODrive 4, axis 1     // hips - left back
+float offSet10 = 0.95;      //ODrive 1, axis 0     // hips - right front
+float offSet11 = -1.25;      //ODrive 1, axis 1     // hips - right back
+float offSet40 = -0.85;      //ODrive 4, axis 0     // hips - left front
+float offSet41 = 1.35;      //ODrive 4, axis 1     // hips - left back
 
 // IMU variables
 
