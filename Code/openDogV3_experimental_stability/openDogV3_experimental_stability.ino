@@ -298,7 +298,7 @@ void loop() {
         AccelY = ay;
         AccelZ = az;
         GyroX = Gyr_Gain * (gx);
-        GyroY = Gyr_Gain * (gy)*-1;
+        GyroY = Gyr_Gain * (gy);
         GyroZ = Gyr_Gain * (gz);
       
         AccelY = (atan2(AccelY, AccelZ) * 180 / PI);
