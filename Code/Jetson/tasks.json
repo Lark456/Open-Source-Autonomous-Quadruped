@@ -1,0 +1,92 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build autonomous_nav (pkg-config)",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "${workspaceFolder}/autonomous_nav.cpp",
+                "-o",
+                "${workspaceFolder}/autonomous_nav",
+                "-std=c++17",
+                "-O2",
+                "-Wall",
+                "-Wextra",
+                "$(__EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json)",
+                "$(pkg-config --cflags --libs opencv4)",
+                "-lrf24",
+                "-lpthread"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Build autonomous_nav (terminal)",
+            "type": "shell",
+            "command": "cd ${workspaceFolder} && g++ autonomous_nav.cpp -o autonomous_nav $(pkg-config --cflags --libs opencv4) -lrf24 -lpthread -std=c++17 -O2",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Run autonomous_nav (sudo)",
+            "type": "shell",
+            "command": "cd ${workspaceFolder} && sudo ./autonomous_nav",
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Start nvargus-daemon",
+            "detail": "Run this if cameras fail to open.",
+            "type": "shell",
+            "command": "sudo systemctl restart nvargus-daemon && sudo systemctl status nvargus-daemon",
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Test camera 0 (headless)",
+            "detail": "Verifies CAM0 works",
+            "type": "shell",
+            "command": "gst-launch-1.0 nvarguscamerasrc sensor-id=0 num-buffers=10 ! nvvidconv ! fakesink",
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Test camera 1 (headless)",
+            "detail": "Verifies CAM1 works",
+            "type": "shell",
+            "command": "gst-launch-1.0 nvarguscamerasrc sensor-id=1 num-buffers=10 ! nvvidconv ! fakesink",
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
