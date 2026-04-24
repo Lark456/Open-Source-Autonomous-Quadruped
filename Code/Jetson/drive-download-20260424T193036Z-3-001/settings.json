@@ -1,0 +1,22 @@
+{
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-arm64",
+    "C_Cpp.errorSquiggles": "enabled",
+    "files.associations": {
+        "*.hpp": "cpp",
+        "*.h": "c"
+    },
+    "editor.formatOnSave": true,
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, IndentWidth: 4, BreakBeforeBraces: Allman }",
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "/bin/bash",
+            "args": ["-l"]
+        }
+    },
+    "terminal.integrated.env.linux": {
+        "PKG_CONFIG_PATH": "/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/aarch64-linux-gnu/pkgconfig",
+        "__EGL_VENDOR_LIBRARY_FILENAMES": "/usr/share/glvnd/egl_vendor.d/10_nvidia.json"
+    }
+}
